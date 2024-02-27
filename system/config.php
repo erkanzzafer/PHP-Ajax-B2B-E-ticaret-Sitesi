@@ -15,3 +15,19 @@ try {
     print_r($e->getMessage());
     die();
 }
+
+
+$query = $db->prepare("SELECT * From ayarlar LIMIT :lim");
+$query->bindValue(':lim', (int)1, PDO::PARAM_INT);
+$query->execute();
+if ($query->rowCount()) {
+    $row    = $query->fetch(PDO::FETCH_OBJ);
+    $site   = $row->siteurl;
+
+
+   
+
+    #sabitler
+    define('site', $site);
+    define('baslik', $row->sitebaslik);
+}

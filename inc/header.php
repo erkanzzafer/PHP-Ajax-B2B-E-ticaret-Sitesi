@@ -1,4 +1,8 @@
-<?php require_once './system/function.php';  ?>
+<?php require_once './system/function.php';
+if ($row->sitedurum != 1) {
+	go($site . 'maintenance.php');
+	//   die();
+} ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
