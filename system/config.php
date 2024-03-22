@@ -25,7 +25,6 @@ if ($query->rowCount()) {
     $site   = $row->siteurl;
 
 
-   
 
     #sabitler
     define('site', $site);
